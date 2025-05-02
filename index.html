@@ -5,37 +5,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chili Perkes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #111; line-height: 1.6; }
-    header, nav, section, footer { max-width: 960px; margin: auto; padding: 2rem; }
-    nav a { margin-right: 1.5rem; text-decoration: none; color: #333; font-weight: 600; }
-    nav a:hover { color: #0070f3; }
-    h1, h2 { margin-bottom: 1rem; }
-    .intro { font-size: 1.25rem; margin-bottom: 2rem; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    footer { text-align: center; font-size: 0.9rem; color: #666; }
-    .social a { margin-right: 1rem; text-decoration: none; color: #0070f3; }
+    :root {
+      --accent: #8C1F52;
+      --text: #111;
+      --background: #fff;
+      --muted: #999;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background-color: var(--background);
+      line-height: 1.6;
+      padding-top: 4rem;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      z-index: 10;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      max-width: 960px;
+      margin: auto;
+      padding: 4rem 2rem 2rem;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "• ";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .social a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 2rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Chili David Perkes</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#makeup">Makeup</a>
-      <a href="#contact">Contact</a>
+      <h1>Chili Perkes</h1>
+      <div>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#makeup">Makeup</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p class="intro">I’m Chili — a curious communicator with a deep love for people, language, storytelling, and style. I’m driven by authenticity and energised by helping others show up as their best and realest selves. With a background in Organisational Psychology and Journalism, I bring insight, empathy, and clarity into everything I do — from managing teams and projects, to writing copy and creating content. I've worked as a Project Manager, Graphic Designer, DTP Operator, and even a Barista — always with a people-first, quality-focused approach.</p>
+    <p class="intro">I’m Chili — a curious communicator with a deep love for people, language, storytelling, and style. I’m driven by authenticity and energised by helping others show up as their best and realest selves. With a background in Organisational Psychology and Journalism, I bring insight, empathy, and clarity into everything I do — from managing teams and projects, to writing copy and creating content. I've worked as a Project Manager, Graphic Designer, DTP Operator, and even a Barista — alway...
   </section>
 
   <section id="experience">
