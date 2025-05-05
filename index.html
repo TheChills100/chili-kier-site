@@ -1,113 +1,230 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chili Kier</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', sans-serif;
-            background-color: #ffffff;
-            color: #111;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background: #fff;
-            padding: 20px 40px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            margin-right: 20px;
-            text-decoration: none;
-            color: #000;
-            font-weight: 500;
-        }
-        nav a:hover {
-            color: #cc0000;
-        }
-        section {
-            padding: 60px 40px;
-        }
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .about-content {
-            max-width: 600px;
-            margin: auto;
-            text-align: center;
-        }
-        .about-content p {
-            overflow: visible;
-            white-space: normal;
-            word-break: break-word;
-            line-height: 1.6;
-            margin-bottom: 1.5em;
-        }
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 100px;
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #999;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chili Kier</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #222;
+      background-color: #f8f8f8;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #fff;
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid #e5e5e5;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .name {
+      font-size: 1.8rem;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      margin: 0.5rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #c21807;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease-in-out forwards;
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .about-flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .profile-pic {
+      max-width: 160px;
+      width: 100%;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .skills-grid ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    .cv-download {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #c21807;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .cv-download:hover {
+      background-color: #a50e04;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (min-width: 700px) {
+      .about-flex {
+        flex-direction: row;
+        text-align: left;
+        gap: 2rem;
+      }
+      .profile-pic {
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 699px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+      nav.active {
+        display: flex;
+      }
+      nav a {
+        margin: 1rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Chili Kier</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <div class="name">Chili Kier</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section id="about">
-        <div class="about-content">
-            <img src="profile.jpg" alt="Chili profile photo" class="profile-pic" />
-            <h2>About Me</h2>
-            <p>I’m Chili — calm, curious, and quietly confident. I approach my work with intention, blending creativity with strategic thinking and emotional insight. I value clarity, kindness, and execution that speaks for itself. I don’t believe in loud entrances — I believe in lasting impact. Thoughtful, sharp, and always growing — that’s the energy I bring into every room and every project.</p>
-        </div>
-    </section>
+  <div class="section" id="about">
+    <div class="about-flex">
+      <img class="profile-pic" src="IMG_2446.jpg" alt="Chili's profile picture">
+      <div>
+        <p>Hi, I'm Chili — a calm, capable communicator who brings precision, clarity and a sharp creative eye to every project. I’m collaborative, conscientious, and grounded — the type of person who gets things done without the drama. Whether it’s coordinating digital campaigns or managing complex timelines, I bring a strong sense of ownership and ease to the process.</p>
+        <a class="cv-download" href="Chili's CV March 2025.pdf" download>Download CV</a>
+      </div>
+    </div>
+  </div>
 
-    <section id="projects">
-        <div class="about-content">
-            <h2>Projects</h2>
-            <p>Coming soon...</p>
-        </div>
-    </section>
+  <div class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <ul>
+        <li>Digital Marketing</li>
+        <li>Content Creation</li>
+        <li>Social Media Strategy</li>
+        <li>Customer Service</li>
+        <li>Project Coordination</li>
+        <li>Google Workspace</li>
+        <li>Adobe InDesign</li>
+        <li>Market Research</li>
+      </ul>
+    </div>
+  </div>
 
-    <section id="contact">
-        <div class="about-content">
-            <h2>Contact</h2>
-            <p>Reach out via email or social. Let’s create something that resonates.</p>
-        </div>
-    </section>
+  <div class="section" id="experience">
+    <h2>Experience</h2>
+    <div class="experience">
+      <h3>Document Manager – Mathematics Textbook Project (Aug 2024 – Nov 2024)</h3>
+      <p>Oversaw layout, formatting, and editorial workflows for a high-stakes educational publication. Coordinated with editors and production staff to ensure timely delivery and publishing quality.</p>
 
-    <footer>
-        &copy; 2025 Chili Kier. All rights reserved.
-    </footer>
+      <h3>Content & Research Associate – Flux Trends (Jan 2020 – Aug 2024)</h3>
+      <p>Managed social platforms, created digital content, and conducted business trend research to sharpen brand narrative and strategic outreach.</p>
+
+      <h3>Research Assistant – Psychology Department, Rhodes University (2019)</h3>
+      <p>Conducted qualitative research, transcribed interview data, and helped analyze patterns related to educational outcomes and mental health.</p>
+    </div>
+  </div>
+
+  <div class="section" id="education">
+    <h2>Education</h2>
+    <div class="education">
+      <p>BA in Psychology and Media, Rhodes University (Graduated: 2019)</p>
+    </div>
+  </div>
+
+  <footer id="contact">
+    <p>Contact: +27 79 374 2665 | <a href="mailto:chili.kier@gmail.com">chili.kier@gmail.com</a> | <a href="https://www.linkedin.com/in/chili-kier-033630189/" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
