@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chili Kier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d4145a;
+            --accent: #fbbf24;
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --muted: #666;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background: url("agnieszka-stankiewicz-3rKDjJtM5w4-unsplash.jpg") no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+            z-index: 1;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        h2:hover {
+            color: var(--accent);
+        }
+
+        .card {
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background: #f9f9f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f4f4f4;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .socials a {
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CHILI</h1>
+        <p>Strategist. Creative. Communicator.</p>
+    </header>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="card">
+            <p><strong>Research and Administration Assistant</strong> at Technology Corporate Management (TCM) (2019)<br>
+                Responsible for consolidating and organizing client records in the company’s database.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+            <p><strong>Bachelor of Social Sciences (BSS)</strong> in Organisational Psychology and Communication Design & Media.</p>
+        </div>
+        <div class="card">
+            <p><a href="https://coursera.org/share/1797250439f7ced2768486c1cb3b6819" target="_blank"><strong>Foundations of Digital Marketing & E-Commerce</strong> (Coursera)</a></p>
+        </div>
+    </section>
+
+    <section id="socials">
+        <h2>Socials</h2>
+        <div class="card socials">
+            <p>
+                <a href="https://www.linkedin.com/in/chili-david-perkes-033630189" target="_blank">LinkedIn</a> |
+                <a href="https://www.instagram.com/thechiliface" target="_blank">@thechiliface</a> |
+                <a href="https://www.instagram.com/thechills100" target="_blank">@thechills100</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Chili Kier. All rights reserved.
+    </footer>
+</body>
+
+</html>
